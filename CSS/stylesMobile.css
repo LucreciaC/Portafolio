@@ -1,0 +1,514 @@
+@media (max-width: 767px) {
+    .skills {
+        margin: 0 auto;
+        padding: 2rem .2rem;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+        width: 80%;
+        border-radius: 3rem 1rem;
+        box-shadow: #0000002b 0 -10px 15px inset, #00000026 0 -20px 20px inset, #0000001a 0 -50px 30px inset, #0000000f 0 2px 1px, #00000017 0 4px 2px, #00000017 0 8px 4px, #00000017 0 16px 8px, #00000017 0 32px 16px;
+    }
+
+    .skills h1 .nombre {
+        font-weight: bold;
+    }
+
+    .skills h1 {
+        font-weight: 300;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        font-size: 1.3rem;
+        font-weight: lighter;
+    }
+
+    .titulo {
+        font-size: 1.1rem;
+    }
+
+    .text {
+        display: none;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #imagen {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #imagen img {
+        width: 270px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .text h2 {
+        padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .redes {
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .redes a {
+        font-size: 30px;
+    }
+
+    .CV {
+        margin-left: 0;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .CV button {
+        border-radius: 20px;
+        padding: 10px 30px;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+    }
+
+    .datos {
+        margin: 0 auto;
+        padding: 2rem .2rem;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+        width: 80%;
+        border-radius: 3rem 1rem;
+    }
+
+    /* Estilo para el título principal */
+    .sobre-mi h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0px;
+    }
+
+    /* Estilo para los encabezados secundarios */
+    .sobre-mi h4 {
+        font-size: 1rem;
+        cursor: pointer;
+        position: relative;
+        padding-right: 25px;
+        margin-top: 45px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #fff;
+        transition: border-bottom 0.3s ease;
+    }
+
+    .sobre-mi h4::after {
+        content: '\f107'; /* Icono de flecha hacia abajo (usando Font Awesome) */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+        margin: auto;
+        font-size: 1rem;
+        padding-bottom: -10px;
+    }
+
+    /* Estilo para los íconos en los encabezados */
+    .sobre-mi h4 i {
+        font-size: 1.2rem;
+    }
+
+    .sobre-mi p,
+    .sobre-mi ul.habilidades {
+        display: none;
+        margin-top: 20px;
+    }
+
+    .sobre-mi h4.active {
+        border-bottom: none;
+    }
+
+    .sobre-mi h4.active + p,
+    .sobre-mi h4.active + ul.habilidades {
+        display: block;
+    }
+
+    .sobre-mi h4.active::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    .sobre-mi h4:last-of-type {
+        margin-bottom: 15px;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .sobre-mi p {
+        font-size: 0.8rem;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #fff;
+    }
+
+    .habilidades {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los íconos se ajusten a la siguiente fila si no hay suficiente espacio */
+        justify-content: left; /* Centra horizontalmente los íconos */
+        align-items: left; /* Centra verticalmente los íconos */
+        gap: 15px; /* Espacio entre los íconos */
+        padding: 0;
+        margin: 0;
+    }
+
+    .sobre-mi h4.active + ul.habilidades {
+        display: flex !important;
+    }
+
+    
+
+    .habilidades li {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .habilidades i {
+        font-size: 1.8rem;
+        margin-top: 5px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px;
+    }
+
+    .project-image {
+        max-width: 100%;
+        border-radius: 20px;
+    }
+
+    .project-item h3 {
+        font-size: 1.25rem;
+    }
+
+    .fab-video, .fab-github {
+        font-size: 1.75rem;
+    }
+}
+
+/* Media Query para pantallas con un ancho máximo de 480px */
+@media (max-width: 480px) {
+    .project-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    .project-item {
+        margin-bottom: 20px;
+    }
+
+    .project-image {
+        max-width: 100%;
+        border-radius: 20px;
+    }
+
+    .project-item h3 {
+        font-size: 1.25rem;
+    }
+
+    .fab-video, .fab-github {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    #portfolio {
+        gap: 0px;
+        padding: 0px;
+    }
+
+    .skills {
+        width: 80%;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+        border-radius: 3rem 1rem;
+        box-shadow: #0000002b 0 -8px 12px inset, #00000026 0 -16px 18px inset, #0000001a 0 -40px 25px inset, #0000000f 0 2px 1px, #00000017 0 4px 2px, #00000017 0 8px 4px;
+    }
+
+    .skills h1 {
+        font-weight: 300;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        font-size: 1.2rem;
+        font-weight: lighter;
+    }
+
+    .skills h1 .nombre {
+        font-weight: bold;
+    }
+
+    .titulo {
+        font-size: 1.2rem;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #imagen img {
+        width: 200px !important;
+        /* Aumenta el tamaño de la imagen */
+
+    }
+
+    .skills ul {
+        padding-left: 0;
+        gap: 5px;
+    }
+
+    .skills li {
+        font-size: 1rem;
+    }
+
+    .text h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .redes {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .redes a {
+        font-size: 25px;
+        /* Tamaño del ícono */
+    }
+
+    .CV {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .CV button {
+        color: #705E9C;
+        background-color: white;
+        border-radius: 30px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        border: solid 2px #705E9C;
+    }
+
+    .CV button:hover {
+        background-color: #f0ece5;
+    }
+
+    .datos {
+        width: 80%;
+        padding: 2rem .2rem;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+        border-radius: 3rem 1rem;
+    }
+
+
+    .sobre-mi h1 {
+        font-size: 1rem;
+    }
+
+    /* Estilo para los encabezados secundarios */
+    .sobre-mi h4 {
+        font-size: 0.8rem;
+    }
+
+    /* Estilo para los íconos en los encabezados */
+    .sobre-mi h4 i {
+        font-size: 0.8rem;
+        /* Tamaño del ícono */
+    }
+
+    /* Estilo para los párrafos */
+    .sobre-mi p {
+        font-size: 0.6rem;
+    }
+
+    .habilidades {
+        gap: 6px; /* Ajuste adicional del espacio entre íconos */
+    }
+
+    .habilidades i {
+        font-size: 1.3rem; /* Tamaño del ícono en pantallas aún más pequeñas */
+    }
+
+    .contact .inputs {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Solo una columna */
+        gap: 32px; /* Reduce el espacio entre los elementos */
+        column-gap: 0; /* Sin espacio entre columnas */
+    }
+
+    .project-item {
+        margin-bottom: 20px; /* Espacio entre los proyectos */
+    }
+
+    .project-image {
+        max-width: 100%; /* Asegúrate de que la imagen ocupe todo el ancho disponible */
+        border-radius: 20px; /* Ajusta el borde redondeado para pantallas pequeñas */
+    }
+
+    .project-item h3 {
+        font-size: 1.25rem; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+    }
+
+    .fab-video, .fab-github {
+        font-size: 1.5rem; /* Reduce el tamaño de los íconos */
+    }
+}
+
+
+@media (max-width: 360px) {
+    .skills {
+        padding: 2rem .2rem;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 15px;
+        max-width: 95%;
+        border-radius: 1rem 0.5rem;
+        box-shadow: #0000002b 0 -5px 8px inset, #00000026 0 -10px 12px inset, #0000001a 0 -30px 20px inset, #0000000f 0 1px 1px, #00000017 0 3px 2px, #00000017 0 6px 3px;
+    }
+
+    .skills h1 {
+        font-size: 0.8rem;
+        font-weight: lighter;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #imagen img {
+        width: 200px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .skills ul {
+        padding-left: 0;
+        gap: 3px;
+    }
+
+    .skills li {
+        font-size: 0.6rem;
+    }
+
+    .text h2 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 0.4rem;
+        text-align: center;
+    }
+
+    .redes {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .redes a {
+        font-size: 20px;
+        /* Tamaño del ícono */
+    }
+
+    .CV {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .CV button {
+        color: #705E9C;
+        background-color: white;
+        border-radius: 25px;
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        border: solid 2px #705E9C;
+    }
+
+    .CV button:hover {
+        background-color: #f0ece5;
+    }
+
+    .datos {
+        padding: 2rem .2rem;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 15px;
+        max-width: 95%;
+        border-radius: 1rem 0.5rem;
+    }
+
+    .sobre-mi h1 {
+        font-size: 0.8rem;
+    }
+
+    .sobre-mi h4 {
+        font-size: 0.6rem;
+    }
+
+    /* Estilo para los íconos en los encabezados */
+    .sobre-mi h4 i {
+        font-size: 0.6rem;
+        /* Tamaño del ícono */
+    }
+
+    /* Estilo para los párrafos */
+    .sobre-mi p {
+        font-size: 0.4rem;
+    }
+
+    .habilidades {
+        gap: 4px; /* Espacio entre íconos en pantallas muy pequeñas */
+    }
+
+    .habilidades i {
+        font-size: 1.2rem; /* Tamaño del ícono en pantallas muy pequeñas */
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Solo una columna */
+        gap: 16px; /* Reduce aún más el espacio entre los elementos */
+    }
+
+    .project-item {
+        margin-bottom: 15px; /* Espacio entre los proyectos */
+    }
+
+    .project-image {
+        max-width: 100%; /* Asegúrate de que la imagen ocupe todo el ancho disponible */
+        border-radius: 16px; /* Ajusta el borde redondeado para pantallas muy pequeñas */
+    }
+
+    .project-item h3 {
+        font-size: 1rem; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+    }
+
+    .fab-video, .fab-github {
+        font-size: 1.2rem; /* Reduce el tamaño de los íconos aún más */
+    }
+}

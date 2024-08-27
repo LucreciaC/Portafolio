@@ -1,0 +1,715 @@
+/* Encabezado principal */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    user-select: none;
+    min-height: 80px;
+    height: 7.5vh;
+    background-color: #705E9C; /* Color específico */
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    display: flex;
+    flex-direction: column; /* Cambiado a columna para que el headerDiv y el nav estén en vertical */
+    
+    box-sizing: border-box;
+    color: #ffffff; /* Cambiado a blanco */
+    margin-bottom: 40px;
+}
+
+/* Contenedor para los enlaces de navegación */
+.headerDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    
+    padding: 1rem 0; /* Espacio interno */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+/* Icono del menú */
+.menuIcon {
+    cursor: pointer;
+    width: 30px; /* Ancho del icono */
+    height: 24px; /* Alto del icono */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+.menuIcon span {
+    display: block;
+    height: 4px; /* Grosor de las líneas */
+    background-color: #ffffff; /* Color de las líneas */
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Estado activo para convertir en "X" */
+.menuIcon.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menuIcon.active span:nth-child(2) {
+    opacity: 0; /* Oculta la línea del medio */
+}
+
+.menuIcon.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
+.menuIcon:hover {
+    transform: scale(1.3);
+}
+
+/* Menú de navegación normal */
+.navbarNormal {
+    display: flex; /* Asegura que los elementos se muestren en una línea */
+    flex-direction: row; /* Muestra los elementos en una fila */
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    gap: 2rem; /* Espacio entre los elementos */
+    align-items: center; /* Alinea los elementos verticalmente en el centro */
+    padding: 0 20px; /* Espacio interno */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+.navbarNormal a {
+    cursor: pointer;
+    color: #ffffff; /* Color específico */
+    text-decoration: none;
+    padding: 5px; /* Aumenta el espacio alrededor del texto */
+    border-radius: 100vmax;
+    font-size: 1.2rem;
+    font-weight: 300;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbarNormal a:hover {
+    background-color: rgba(0, 0, 0, 0.432);
+    color: #ffffff; /* Color específico */
+    transform: scale(1.1);
+}
+
+
+.navbarMobile {
+    display: none; /* Oculta el menú móvil por defecto */
+    flex-direction: column;
+    align-items: center; /* Alinea los elementos al centro del menú móvil */
+    justify-content: center; /* Centra verticalmente los elementos */
+    gap: 1.5rem; /* Ajusta el espacio entre los elementos */
+    background-color: #705E9C; /* Color específico */
+    padding: 2rem 1rem; /* Espacio interno */
+    border-bottom: 1px solid #ffffff; /* Color específico */
+    position: absolute; /* Posiciona el menú móvil en relación al ícono del menú */
+    top: 100%; /* Alinea el menú debajo del header */
+    left: 0; /* Alinea el menú con el borde izquierdo del header */
+    width: 93.5vw; /* Ancho completo de la vista */
+    max-width: 100%; /* Ajusta el ancho al contenedor padre */
+    z-index: 1000; /* Asegura que el menú esté encima de otros elementos */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Suaviza la transición */
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(-10px); /* Inicialmente fuera de vista */
+}
+
+.navbarMobile a {
+    color: #ffffff; /* Asegura que los enlaces sean blancos */
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: color 0.3s;
+}
+
+.navbarMobile a:hover {
+    color: #ffffff; /* Mantén el color al pasar el ratón */
+    transform: scale(1.1);
+}
+
+.navbarMobile.active {
+    display: flex; /* Muestra el menú móvil */
+    opacity: 1; /* Muestra el menú móvil */
+    transform: translateY(0); /* Muestra el menú móvil en su posición */
+}
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row; /* Cambiado a fila para alinear headerDiv y navbarNormal horizontalmente */
+        padding: 0 2.5rem; /* Aumenta el espacio interno en pantallas grandes */
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        border-bottom: 1px solid #ffffff; /* Color específico */
+        border-bottom-left-radius: 32px;
+        border-bottom-right-radius: 32px;
+    }
+
+   
+    
+
+    .headerDiv {
+        flex: 1; /* Asegura que ocupe el espacio restante */
+        margin-right: 2rem;
+        
+    }
+
+    .menuIcon {
+        display: none; /* Oculta el ícono del menú en pantallas grandes */
+    }
+
+    .navbarMobile {
+        display: none; /* Asegura que el menú móvil esté oculto en pantallas grandes */
+    }
+
+    .navbarNormal {
+        display: flex; /* Muestra el menú de navegación normal en pantallas grandes */
+    }
+}
+
+@media (max-width: 767px) {
+    .headerTitle{
+        padding-left: 20px;
+    }
+    .navbarNormal {
+        display: none; /* Oculta el menú de navegación normal en pantallas pequeñas */
+    }
+
+    .navbarMobile {
+        display: none; /* Inicialmente oculto */
+    }
+}
+
+
+
+@keyframes fadeInAnchor {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Estilos generales para el cuerpo */
+body {
+    font-family: Lato, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #332B47;
+    color: #ffffff; /* Cambiado a blanco */
+    scroll-behavior: smooth;
+}
+
+#portfolio {
+    display: grid;
+    grid-template-areas: 
+      "header"
+      "skills"
+      "projects"
+      "contact";
+    gap: 20px;
+    padding: 20px;
+}
+
+
+
+main {
+    margin-bottom: 4rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para la sección de habilidades */
+.skills {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    background-color: #705E9C;
+    color: #ffffff; /* Color del texto */
+    width: 85%;
+    position: relative;
+    z-index: 1;
+    border-radius: 3rem 1rem;
+    overflow: hidden;
+    box-shadow: #0000002b 0 -23px 25px inset, #00000026 0 -36px 30px inset, #0000001a 0 -79px 40px inset, #0000000f 0 2px 1px, #00000017 0 4px 2px, #00000017 0 8px 4px, #00000017 0 16px 8px, #00000017 0 32px 16px;
+}
+
+.skills h1 {
+    font-size: 2.5rem;
+    font-weight: lighter;
+}
+
+.skills h1 .nombre {
+    font-weight: bold;
+}
+
+/* Estilo para el texto con animación de máquina de escribir */
+.titulo {
+    position: relative;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 1.5rem;
+    overflow: hidden; /* Asegura que el texto no se desborde */
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    border-right: 2px solid #ffffff; /* Cursor de máquina de escribir */
+    animation: blink-caret 0.75s step-end infinite;
+    margin-top: 0;
+    min-height: 1.5em;
+    width: max-content;
+}
+
+/* Animación del parpadeo del cursor */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #ffffff; }
+}
+
+/* Estilos para el contenedor de imagen y texto */
+.content {
+    display: flex;
+    align-items: flex-start; /* Alinea la imagen con el texto */
+    gap: 20px;
+    max-width: 100%;
+}
+
+/* Estilos para la imagen */
+#imagen {
+    flex-shrink: 0;
+}
+
+#imagen img {
+    width: 280px;
+    height: auto;
+    border-radius: 3rem 1rem;
+    filter: brightness(90%);
+    border: solid 3px #f0ece5;
+    box-shadow: #00000029 0 3px 6px, #0000003b 0 3px 6px;
+}
+
+/* Estilos para la lista de habilidades */
+.skills ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 10px;
+    list-style-type: none;
+   
+    padding-left: 150px;
+    margin: 0;
+}
+
+.skills li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #ffffff; /* Color del texto */
+    font-size: 1.2rem;
+    background: none; /* Elimina el fondo */
+}
+
+.skills i {
+    margin-right: 10px;
+    font-size: 3.5rem;
+    color: #ffffff; /* Color del ícono */
+}
+
+.text {
+    flex: 1;
+}
+
+.text h2 {
+    margin-top: -50px; /* Ajuste para subir el texto */
+    margin-bottom: 50px;
+    padding-left: 150px;
+    text-align: left;
+    font-size: 2rem;
+}
+
+/* Estilo para las redes sociales */
+.redes {
+    display: flex;
+    justify-content: flex-start; /* Alinea las redes sociales a la izquierda */
+    gap: 10px; /* Espacio entre los íconos */
+    margin-top: 20px; /* Espacio superior para separar de la imagen */
+    margin-left: 70px;
+}
+
+.redes ul {
+    display: flex; /* Muestra los elementos en una fila */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.redes li {
+    margin: 0 5px; /* Espacio entre los íconos */
+}
+
+.redes a {
+    display: inline-block;
+    width: 30px; /* Tamaño del ícono */
+    height: 30px; /* Tamaño del ícono */
+    background-color: transparent; /* Fondo transparente */
+    border-radius: 50%; /* Hace los íconos circulares */
+    text-align: center; /* Centra el contenido dentro del ícono */
+    line-height: 30px; /* Centra verticalmente el ícono */
+    color: #ffffffaf; /* Color blanco para el ícono */
+    font-size: 50px; /* Tamaño del ícono */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.redes a:hover {
+    background-color: transparent; /* Mantiene el fondo transparente al pasar el ratón */
+    color: #332B47; /* Color del ícono al pasar el ratón */
+}
+
+
+/* Estilo para el botón de descarga de CV */
+.CV {
+    text-align: center; /* Centra el contenido del botón */
+    margin-top: 20px; /* Espacio superior para separar de la lista de habilidades */
+    margin-left: 300px;
+}
+
+.CV button {
+    background-color: #8F78C6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.CV button:hover {
+    background-color: #332B47;
+}
+
+
+/* Estilo para la sección 'Sobre mí' */
+.sobre-mi {
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.datos{
+    background-color: #705E9C; /* Mismo color de fondo que la sección de habilidades */
+    color: #ffffff; /* Color del texto */
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    border-radius: 3rem 1rem;
+    box-shadow: #0000002b 0 -23px 25px inset, #00000026 0 -36px 30px inset, #0000001a 0 -79px 40px inset, #0000000f 0 2px 1px, #00000017 0 4px 2px, #00000017 0 8px 4px, #00000017 0 16px 8px, #00000017 0 32px 16px;
+    position: relative;
+    max-width: 85%; /* Ajuste del ancho para que no se extienda demasiado */
+    overflow: hidden;
+}
+
+/* Estilo para el título principal */
+.sobre-mi h1 {
+    font-size: 3rem;
+    
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Estilo para los encabezados secundarios */
+.sobre-mi h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilo para los íconos en los encabezados */
+.sobre-mi h4 i {
+    font-size: 1.5rem; /* Tamaño del ícono */
+    color: #ffffff; /* Color del ícono */
+}
+
+/* Estilo para los párrafos */
+.sobre-mi p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 10px 0;
+    text-align: justify;
+}
+
+.habilidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+     /* Incrementa el espacio entre los elementos */
+    list-style-type: none;
+    padding-left: 0;
+    
+    color: #ffffff;
+    font-size: 1.2rem;
+    justify-items: center; /* Centra los íconos y textos */
+    align-items: center;   /* Centra verticalmente los íconos y textos */
+}
+
+.habilidades li {
+    text-align: center;
+    padding: 10px;
+}
+
+.habilidades i {
+    font-size: 2rem; /* Ajusta el tamaño de los íconos */
+    margin-bottom: 5px;
+    display: block; /* Asegura que el ícono esté en su propia línea */
+}
+
+/* Estilos generales de la sección */
+.projects {
+    background-color: #705E9C;
+    color: #ffffff;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    border-radius: 3rem 1rem;
+    box-shadow: #0000002b 0 -23px 25px inset, #00000026 0 -36px 30px inset, 
+                #0000001a 0 -79px 40px inset, #0000000f 0 2px 1px, 
+                #00000017 0 4px 2px, #00000017 0 8px 4px, #00000017 0 16px 8px, 
+                #00000017 0 32px 16px;
+    position: relative;
+    max-width: 85%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* Estilos para el contenedor de la sección completa */
+.project-container {
+    margin-bottom: 4rem;
+}
+
+/* Estilos para el título dentro del contenedor */
+.project-container h2 {
+    text-align: left;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el contenedor de proyectos */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Siempre dos columnas */
+    gap: 64px;
+    column-gap: 150px;
+}
+
+/* Estilos para cada item del proyecto */
+.project-item {
+    background-color: #705e9c00;
+    color: #fff;
+    text-align: center;
+}
+
+/* Estilos para la imagen del proyecto */
+.project-image {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    border-radius: 32px;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+    filter: brightness(80%);
+    box-shadow: #0000003d 0 3px 8px;
+}
+
+.project-image:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para el título del proyecto */
+.project-item h3 {
+    margin: 0;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: #f0ece5;
+}
+
+.project-container p {
+    color: #f0ece5;
+    margin-bottom: 34px;
+    font-weight: 300;
+    font-family: Lato, sans-serif;
+    opacity: 1;
+}
+
+/* Estilos para el contenedor de botones */
+.project-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+/* Estilos para el botón de video */
+.fab-video, .fab-github {
+    display: inline-block;
+    width: 15px;
+    height: auto;
+    background-color: transparent;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    color: #ffffffaf;
+    font-size: 2rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.fab-video:hover, .fab-github:hover {
+    background-color: transparent;
+    color: #332B47;
+}
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed;
+    z-index: 1000; /* Asegurarse de que esté en la parte superior */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad */
+    padding-top: 60px;
+}
+
+.modal iframe {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* Estilos específicos para la sección de contactos */
+.contact {
+    width: 100%; /* Asegura que la sección ocupe todo el ancho disponible */
+    max-width: 1200px; /* Ancho máximo para mantener consistencia con otras secciones */
+    margin: 0 auto;
+    padding: 3rem 0; /* Espaciado arriba y abajo consistente con otras secciones */
+}
+
+.contact h2 {
+    font-size: 2.5rem; /* Ajusta el tamaño de la fuente del título */
+    text-align: center;
+    margin-bottom: 2rem; /* Espaciado debajo del título */
+}
+
+.contact .inputs {
+    width: 80%; /* Ajusta el ancho de los inputs para que sean consistentes */
+    margin: 0 auto;
+}
+
+.contact .input-group {
+    margin-bottom: 1.5rem; /* Espaciado entre cada grupo de inputs */
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+    width: 100%; /* Asegura que los inputs y el textarea ocupen todo el ancho disponible */
+    padding: 0.75rem; /* Espaciado interno para los campos de texto */
+    font-size: 1rem; /* Tamaño de fuente consistente */
+    border-radius: 0.5rem; /* Bordes redondeados */
+}
+
+.contact button[type="submit"] {
+    display: block;
+    width: 100%; /* Botón de envío ocupa todo el ancho */
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #705E9C; /* Mismo color de tu esquema */
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact button[type="submit"]:hover {
+    background-color: #5e4b8a; /* Color de fondo ligeramente más oscuro al hacer hover */
+}
+
+
+footer {
+    background-color: #705E9C; /* Color de fondo igual al que usas en otras secciones */
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    border-top: 1px solid #f0ece5;
+}
+
+footer h4 {
+    margin: 0;
+    font-weight: normal;
+    letter-spacing: 1px;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    font-family: Lato, sans-serif;
+}
+
+.año{
+    font-weight: lighter;
+}
+
+.footer-nav {
+    margin-top: 32px;
+    gap: 16px;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px; /* Ajusta el tamaño de fuente si es necesario */
+    font-weight: lighter;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
